@@ -1,17 +1,18 @@
 import React from 'react'
+import {BrowserRouter as Router, Link} from 'react-router-dom'
 import {Container, Nav, Navbar, NavbarBrand, NavItem, NavLink, Row} from 'reactstrap'
 import './App.css'
-import Icon from './Icon'
+import Icon from './icon/Icon'
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar dark={true} fixed="top" color="dark" className="flex-md-nowrap p-0 shadow">
         <NavbarBrand className="col-sm-3 col-md-2 mr-0" href="#">Company name</NavbarBrand>
         <div className="w-100"/>
         <Nav navbar={true} className="px-3">
           <NavItem className="text-nowrap">
-            <NavLink href="#">Sign out</NavLink>
+            <NavLink to="/logout" tag={Link}>Sign out</NavLink>
           </NavItem>
         </Nav>
       </Navbar>
@@ -22,7 +23,7 @@ function App() {
             <div className="sidebar-sticky">
               <Nav vertical={true}>
                 <NavItem>
-                  <NavLink active={true} href="#">
+                  <NavLink active={true} to="/" tag={Link}>
                     <Icon>home</Icon>
                     Dashboard
                   </NavLink>
@@ -49,7 +50,7 @@ function App() {
           </div>
         </div>
       </main>
-    </>
+    </Router>
   )
 }
 
